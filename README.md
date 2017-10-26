@@ -1,26 +1,27 @@
 # Ruby Golf
 
 ## How to play
-Ruby Golf is a game whereby the player is required to solve a number of problems in the fewest characters possible.
+Ruby Golf is a game whereby the player is required to solve a number of problems (holes) in the fewest characters possible.
 
 The course consists of nine problems that you must implement.
 
-The holes are static methods that need to written for the `Golf` class (`lib/golf.rb`).
+The holes are classes that expect a static method `golf ` (`lib/hole1.rb`, `lib/hole2.rb` ... `lib/hole9.rb`).
 
-The requirements for these methods is specified by a set of RSpec examples for each hole (`spec/golf_spec.rb`). To run the specs, simply run:
+The requirements for these methods is specified by a set of RSpec examples for each hole (ex: `spec/hole1_spec.rb`). 
+To run the specs, simply do:
 ```
   rake
 ```
 The first time you run this, all tests will fail. The aim is to get all test to pass.
 
 ## See character count
-If you want to see the number of characters you currently have:
+If you want to see the number of characters you currently have for each hole:
 ```
   rake count
 ```
 ## Bonus: Snowman challenge
 
-### Would you like to build a snowman [with as few characters as possible] ?
+### Would you like to build a snowman (with as few characters as possible) ?
 
 Here is a simple ASCII art snowman:
 ```
