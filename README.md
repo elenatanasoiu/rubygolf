@@ -198,3 +198,7 @@ The shortest code in characters wins.
  (] [)>  <(   )>
  (___)    (   )
 ```
+
+## Credit
+
+The Ruby Golf challenge was inspired by Andrew McDonough. You can see the original [here](https://github.com/andrewmcdonough/rubygolf).
