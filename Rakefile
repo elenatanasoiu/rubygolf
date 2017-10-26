@@ -1,15 +1,14 @@
 require 'rubygems'
 require 'rake'
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 
 COUNT_WHITESPACE = false
 
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.spec_files = FileList['spec/**/*_spec.rb']
-end
+RSpec::Core::RakeTask.new(:spec)
 
-task :default => [:spec, :count]
+task default: [
+    :spec,
+    :count]
 
 task :count do
   open(File.dirname(__FILE__) + "/lib/golf.rb") do |file|
@@ -17,8 +16,9 @@ task :count do
     solution.gsub!(/\s/,"") unless COUNT_WHITESPACE
     total_characters = solution.length
     puts "-----------------------------------------------"
-    puts "| Congratulations, you've completed the course."
-    puts "| Total characters: #{total_characters}        " 
+    puts "| Golf score - Total characters: #{total_characters}        "
     puts "-----------------------------------------------"
   end
 end
+
+
