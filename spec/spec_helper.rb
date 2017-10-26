@@ -1,4 +1,12 @@
-require 'golf'
+require 'hole1'
+require 'hole2'
+require 'hole3'
+require 'hole4'
+require 'hole5'
+require 'hole6'
+require 'hole7'
+require 'hole8'
+require 'hole9'
 require 'snowman'
 require 'rspec'
 

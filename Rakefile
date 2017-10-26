@@ -11,13 +11,15 @@ task default: [
     :count]
 
 task :count do
-  open(File.dirname(__FILE__) + "/lib/golf.rb") do |file|
-    solution = file.read
-    solution.gsub!(/\s/,"") unless COUNT_WHITESPACE
-    total_characters = solution.length
-    puts "-----------------------------------------------"
-    puts "| Golf score - Total characters: #{total_characters}        "
-    puts "-----------------------------------------------"
+  (1..9).each do |hole_number|
+    open(File.dirname(__FILE__) + "/lib/hole#{hole_number}.rb") do |file|
+      solution = file.read
+      solution.gsub!(/\s/,"") unless COUNT_WHITESPACE
+      total_characters = solution.length
+      puts "-----------------------------------------------"
+      puts "| Hole ##{hole_number} score - Total characters: #{total_characters}        "
+      puts "-----------------------------------------------"
+    end
   end
 end
 
@@ -27,7 +29,7 @@ task :count_snowman do
     solution.gsub!(/\s/,"") unless COUNT_WHITESPACE
     total_characters = solution.length
     puts "-----------------------------------------------"
-    puts "| Golf score - Total characters: #{total_characters}        "
+    puts "| Snowman score - Total characters: #{total_characters}        "
     puts "-----------------------------------------------"
   end
 end
