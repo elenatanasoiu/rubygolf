@@ -21,4 +21,15 @@ task :count do
   end
 end
 
+task :count_snowman do
+  open(File.dirname(__FILE__) + "/lib/snowman.rb") do |file|
+    solution = file.read
+    solution.gsub!(/\s/,"") unless COUNT_WHITESPACE
+    total_characters = solution.length
+    puts "-----------------------------------------------"
+    puts "| Golf score - Total characters: #{total_characters}        "
+    puts "-----------------------------------------------"
+  end
+end
+
 
